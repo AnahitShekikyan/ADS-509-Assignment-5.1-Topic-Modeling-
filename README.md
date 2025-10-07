@@ -1,24 +1,27 @@
 ## ADS 509: Topic Modeling
 
-Topic modeling is a fundamental text analysis technique since asking "What are these documents about?" is a fundamental question. In this assignment, you will build an NMF model, an LDA topic model, and an LSA topic model. You will compare the resulting topic allocations. In this assignment, we will work with the Brown University corpus in `nltk`. The documents are in categories already, so you can compare your models to the official classification as well.
+Topic modeling project using the NLTK Brown corpus. Three models are fitted and compared to the corpus’ official categories:
 
-## Instructions
+* NMF (with TF-IDF)
+* LSA / TruncatedSVD (with TF-IDF)
+* LDA (with Count vectors)
 
-1. Create a repository under your GitHub account from this template: https://github.com/37chandler/ads-tm-topic-modeling. Instructions can be found [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template). Make your repository public or add your instructor’s Github account as a [collaborator](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository).   
-1. The notebook “Topic Models.ipynb” holds detailed instructions for the assignment. In that notebook, you are asked to do the following: 
-    
-    *  Run pre-written code exploring the Brown corpus.
-    *  Fit a NMF model and interpret it.
-    *  Fit an LSA model and interpret it.
-    *  Fit an LDA model and interpret it. 
+# Files
+* ADS 509 Assignment 5.1 Topic Modeling.ipynb — main notebook
+*  ADS 509 Assignment 5.1 Topic Modeling.pdf — exported report
+*  lda_topics_brown.html — interactive LDA visualization (optional)
 
-1. Work through the notebook, performing the steps asked of you. Use and extend the code from the chapters of your textbook.
+# Data
+Brown corpus categories used: editorial, government, news, romance, hobbies.
 
-## Assignment Materials
+# Workflow
+*  exploration of corpus and document lengths
+*  Vectorization: TF-IDF for NMF/LSA; Count for LDA
+*  Comparison to gold categories via cross-tabs and clustering metrics (V-measure, ARI, AMI)
+*  Topic visualization with pyLDAvis
+
+# Findings (k = 5)
+*  NMF: Moderate alignment with clear themes (news, editorial, romance, hobbies), some overlap between news and government
+*  LSA: Weakest alignment, components act as semantic axes that mix categories
+*  LDA: Moderate alignment, distinct topics for government/economy, news/politics, narrative/romance, and hobbies
   
-* Topic Modeling Repository
-
-Deliverables:
-
-* When you have finished your code, print your notebook as a PDF and upload this document to Canvas. 
-* Commit your code and push the changes to GitHub so your instructor has access to the ipynb notebook file and any other code you create. 
